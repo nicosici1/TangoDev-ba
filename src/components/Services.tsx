@@ -141,7 +141,7 @@ export default function Services() {
                       </div>
                       {/* Code Content */}
                       <div className="text-xs text-white font-mono mt-4">
-                        <div className="text-gray-400">// Obtener año actual</div>
+                        <div className="text-gray-400">{/* Obtener año actual */}</div>
                         <div className="text-blue-400">const</div> <div className="text-white">añoActual =</div> <div className="text-green-400">new Date</div><div className="text-white">().</div><div className="text-blue-400">getFullYear</div><div className="text-white">();</div>
                       </div>
                     </div>

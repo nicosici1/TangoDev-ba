@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, ToggleLeft } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useState } from 'react';
 
 const Pricing = () => {
