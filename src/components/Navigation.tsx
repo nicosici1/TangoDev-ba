@@ -11,27 +11,18 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
           <span className="text-stone-100 text-2xl lg:text-3xl xl:text-4xl font-helvetica-neue">tangodev</span>
           
-          {/* Logo - Left Edge */}
-          <div className="flex items-center space-x-3">
-          {/* <div className="w-3 h-3 bg-white rounded-full"></div> */}
-            <span className="text-stone-100 text-2xl lg:text-3xl xl:text-4xl font-helvetica-neue">
-              <span className="font-medium">↘</span>
-             {/*  <span className="font-medium">dev</span> */}
-            </span>
-           
-          </div>
 
           {/* Desktop Navigation - Center */}
           <div className="hidden lg:flex items-center space-x-10 xl:space-x-12">
-            <a href="#" className="text-white hover:text-orange-400 transition-colors underline underline-offset-4 font-medium text-lg">Inicio</a>
-            <a href="#" className="text-white hover:text-orange-400 transition-colors font-medium text-lg">Recursos</a>
-            <a href="#" className="text-white hover:text-orange-400 transition-colors font-medium text-lg">Precios</a>
-            <a href="#" className="text-white hover:text-orange-400 transition-colors font-medium text-lg">FAQ</a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors underline underline-offset-4 font-medium text-lg">Inicio</a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors font-medium text-lg">Recursos</a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors font-medium text-lg">Precios</a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors font-medium text-lg">FAQ</a>
           </div>
 
           {/* Right side actions - Right Edge */}
           <div className="flex items-center space-x-4 lg:space-x-6">
-            <a href="#" className="hidden lg:block text-white hover:text-orange-400 transition-colors font-medium text-base lg:text-lg">Iniciar sesión</a>
+            <a href="#" className="hidden lg:block text-white hover:text-blue-400 transition-colors font-medium text-base lg:text-lg">Iniciar sesión</a>
             <button className="hidden lg:block bg-white text-black px-4 py-2 lg:px-6 lg:py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base lg:text-lg">
               Comenzar
             </button>

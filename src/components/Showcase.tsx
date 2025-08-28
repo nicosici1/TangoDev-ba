@@ -11,9 +11,9 @@ const Showcase = () => {
     {
       id: 1,
       title: "Subilo Dashboard",
-      description: "Plataforma completa para músicos que permite gestionar envíos, subir nuevos tracks y compartir música de forma profesional con enlaces personalizados.",
+      description: "Proyecto personal desarrollado por el equipo. Plataforma completa para músicos que permite gestionar envíos, subir tracks y compartir música profesionalmente.",
       background: "url('/imgs/cryptohub2.png')",
-      category: "Plataforma Musical",
+      category: "Proyecto Personal",
       details: [
         "Dashboard completo para músicos",
         "Gestión de tracks y envíos",
@@ -23,23 +23,10 @@ const Showcase = () => {
     },
     {
       id: 2,
-      title: "Aplicaciones Móviles",
-      description: "Desarrollamos aplicaciones móviles nativas e híbridas que ofrecen experiencias de usuario excepcionales en iOS y Android.",
+      title: "E-commerce Avanzado",
+      description: "Ejemplo de nuestras capacidades en e-commerce. Plataformas completas con pasarelas de pago, gestión de inventario y analytics en tiempo real.",
       background: "url('/imgs/dashboard.png')",
-      category: "Mobile Development",
-      details: [
-        "Apps nativas iOS y Android",
-        "Desarrollo híbrido con React Native",
-        "Integración con APIs y servicios",
-        "Publicación en App Store y Google Play"
-      ]
-    },
-    {
-      id: 3,
-      title: "E-commerce",
-      description: "Construimos plataformas de comercio electrónico completas con pasarelas de pago, gestión de inventario y análisis avanzados.",
-      background: "url('/imgs/escalera.jpg')",
-      category: "E-commerce Solutions",
+      category: "Capacidad Técnica",
       details: [
         "Plataformas completas de e-commerce",
         "Integración con pasarelas de pago",
@@ -48,16 +35,29 @@ const Showcase = () => {
       ]
     },
     {
-      id: 4,
-      title: "Consultoría Digital",
-      description: "Asesoramos en estrategias digitales, optimización de procesos y transformación tecnológica para impulsar tu negocio.",
-      background: "url('/imgs/window.jpg')",
-      category: "Digital Strategy",
+      id: 3,
+      title: "SaaS & Aplicaciones Web",
+      description: "Desarrollamos aplicaciones web escalables con backends robustos, sistemas de autenticación y paneles de administración avanzados.",
+      background: "url('/imgs/escalera.jpg')",
+      category: "Desarrollo Web",
       details: [
-        "Auditoría y análisis de sistemas",
-        "Estrategias de transformación digital",
-        "Optimización de procesos empresariales",
-        "Capacitación y transferencia de conocimiento"
+        "Aplicaciones web escalables",
+        "Backend con APIs RESTful",
+        "Sistemas de autenticación",
+        "Paneles de administración"
+      ]
+    },
+    {
+      id: 4,
+      title: "Landing Pages de Alto Impacto",
+      description: "Sitios web optimizados para conversión, con diseños modernos, animaciones fluidas y SEO técnico implementado desde el desarrollo.",
+      background: "url('/imgs/window.jpg')",
+      category: "Web Design & Development",
+      details: [
+        "Diseño responsive y moderno",
+        "Optimización para conversiones",
+        "SEO técnico implementado",
+        "Animaciones y microinteracciones"
       ]
     }
   ];
@@ -84,15 +84,22 @@ const Showcase = () => {
       <div className="relative z-10 w-full pt-32 lg:pt-40 pb-24 lg:pb-32">
         <div className="w-full px-4 lg:px-8 xl:px-12 2xl:px-16">
           
-          {/* Section Header - mismo estilo que Services */}
+          {/* Section Header - Enfoque en capacidades */}
           <div className="text-center mb-20 lg:mb-32">
             <div className="w-full mb-8">
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[0.95] tracking-[-1.2px] font-helvetica-neue text-center">
-                Nuestros proyectos que
+                El tipo de proyectos que
               </div>
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[0.95] tracking-[-1.2px] font-helvetica-neue text-center">
-                marcan la diferencia
+                creamos para ti
               </div>
+            </div>
+            
+            {/* Subtítulo explicativo */}
+            <div className="max-w-[800px] mx-auto">
+              <p className="text-stone-200 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue text-center">
+                Somos una agencia nueva con desarrolladores experimentados. Estos son ejemplos de nuestras capacidades y proyectos desarrollados por el equipo.
+              </p>
             </div>
           </div>
 
