@@ -113,7 +113,7 @@ const Footer = () => {
             transition={{ duration: 2, ease: "easeOut" }}
             className="font-pp-neue text-[8rem] md:text-[12rem] lg:text-[22rem] text-white leading-none tracking-tighter select-none pointer-events-none"
           >
-            <span className="font-bold">Tango</span>
+            <span className="font-bold">tango</span>
             <span className="font-semibold">dev</span>
           </motion.div>
           

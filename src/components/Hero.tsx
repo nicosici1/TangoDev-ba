@@ -10,9 +10,9 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Aurora
           colorStops={["#0f172a", "#1e293b", "#0f172a"]}
-          blend={0.8}
-          amplitude={1.2}
-          speed={0.8}
+          blend={0.9}
+          amplitude={1.4}
+          speed={0.9}
         />
       </div>
 

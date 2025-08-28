@@ -12,7 +12,7 @@ const Showcase = () => {
       id: 1,
       title: "Subilo Dashboard",
       description: "Plataforma completa para músicos que permite gestionar envíos, subir nuevos tracks y compartir música de forma profesional con enlaces personalizados.",
-      background: "url('/imgs/pilares.jpg')",
+      background: "url('/imgs/cryptohub2.png')",
       category: "Plataforma Musical",
       details: [
         "Dashboard completo para músicos",
@@ -25,7 +25,7 @@ const Showcase = () => {
       id: 2,
       title: "Aplicaciones Móviles",
       description: "Desarrollamos aplicaciones móviles nativas e híbridas que ofrecen experiencias de usuario excepcionales en iOS y Android.",
-      background: "url('/imgs/back.jpg')",
+      background: "url('/imgs/dashboard.png')",
       category: "Mobile Development",
       details: [
         "Apps nativas iOS y Android",
@@ -87,10 +87,10 @@ const Showcase = () => {
           {/* Section Header - mismo estilo que Services */}
           <div className="text-center mb-20 lg:mb-32">
             <div className="w-full mb-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-white leading-[0.95] tracking-[-1.2px] font-helvetica-neue text-center">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[0.95] tracking-[-1.2px] font-helvetica-neue text-center">
                 Nuestros proyectos que
               </div>
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-white leading-[0.95] tracking-[-1.2px] font-helvetica-neue text-center">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[0.95] tracking-[-1.2px] font-helvetica-neue text-center">
                 marcan la diferencia
               </div>
             </div>
@@ -139,8 +139,8 @@ const Showcase = () => {
                       className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
                       style={{ 
                         background: service.background,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+                        backgroundSize: isExpanded ? 'cover' : 'cover',
+                        backgroundPosition: isExpanded ? 'center' : '30% center',
                         backgroundRepeat: 'no-repeat'
                       }}
                     />
@@ -156,16 +156,16 @@ const Showcase = () => {
                           className={`backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 ${
                             isExpanded
                               ? 'w-10 h-10 bg-red-500/20 hover:bg-red-500/30'
-                              : 'w-10 h-10 bg-white/20 group-hover:bg-white/30'
+                              : 'w-10 h-10 bg-gray-300/90 hover:bg-gray-200/90'
                           }`}
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                         >
                           {isExpanded ? (
-                            <X className="w-5 h-5 text-white" />
+                            <X className="w-6 h-6 text-white" />
                           ) : (
-                            <div className="w-5 h-5 text-white flex items-center justify-center transform -rotate-45">
-                              <ArrowRight className="w-4 h-4" />
+                            <div className="w-6 h-6 text-black flex items-center justify-center transform -rotate-45">
+                              <ArrowRight className="w-5 h-5" />
                             </div>
                           )}
                         </motion.div>
@@ -178,14 +178,19 @@ const Showcase = () => {
                             {service.category}
                           </span>
                         </div>  */}
+                        {/* Título comentado temporalmente
                         <h3 className="text-white text-xl lg:text-2xl font-medium mb-3 font-pp-neue">
                           {service.title}
                         </h3>
+                        */}
+                        {/* Descripción comentada temporalmente
                         <p className="text-gray-300 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
                           {service.description}
                         </p>
+                        */}
                         
                         {/* Expanded content - Horizontal layout */}
+                        {/* Contenido expandido comentado temporalmente
                         <AnimatePresence>
                           {isExpanded && (
                             <motion.div
@@ -209,16 +214,29 @@ const Showcase = () => {
                                   >
                                     <div className="w-1.5 h-1.5 bg-white/60 rounded-full mr-2 flex-shrink-0"></div>
                                     {detail}
-                                  </motion.div>
+                                  </div>
                                 ))}
                               </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
+                        */}
                       </div>
                       
-                      {/* Bottom spacer */}
-                      <div></div>
+                      {/* Bottom section - Title and Category */}
+                      <div className="relative z-10">
+                        {/* Overlay adicional para mejor legibilidad */}
+                        <div className="absolute -left-6 -right-6 -bottom-6 h-32 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+                        
+                        <div className="relative z-20">
+                          <span className="text-xs lg:text-sm font-normal text-stone-400 font-pp-neue uppercase tracking-wider mb-2 block">
+                            {service.category}
+                          </span>
+                          <h3 className="text-stone-200 text-xl lg:text-2xl xl:text-3xl font-medium font-pp-neue leading-tight">
+                            {service.title}
+                          </h3>
+                        </div>
+                      </div>
                     </div>
                     
                     {/* Hover effect overlay */}

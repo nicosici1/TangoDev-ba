@@ -8,14 +8,15 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="w-full px-8 lg:px-12 xl:px-12">
-        <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">  nm
+        <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
+          <span className="text-stone-100 text-2xl lg:text-3xl xl:text-4xl font-helvetica-neue">tangodev</span>
           
           {/* Logo - Left Edge */}
           <div className="flex items-center space-x-3">
-          <div className="w-3 h-3 bg-white rounded-full"></div>
+          {/* <div className="w-3 h-3 bg-white rounded-full"></div> */}
             <span className="text-stone-100 text-2xl lg:text-3xl xl:text-4xl font-helvetica-neue">
-              <span className="font-bold">tango</span>
-              <span className="font-medium">dev</span>
+              <span className="font-medium">↘</span>
+             {/*  <span className="font-medium">dev</span> */}
             </span>
            
           </div>
