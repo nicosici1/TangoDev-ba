@@ -17,12 +17,20 @@ export default function Services() {
           {/* Section Header - estilo español */}
           <div className="text-center mb-20 lg:mb-32">
             <div className="w-full mb-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-white leading-[0.95] tracking-[-1.2px] font-pp-neue text-center">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[1.1] tracking-[-1.2px] font-pp-neue text-center">
                 Las herramientas que impulsan
               </div>
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-white leading-[0.95] tracking-[-1.2px] font-pp-neue text-center">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[1.1] tracking-[-1.2px] font-pp-neue text-center">
                 sitios web extraordinarios
               </div>
+            </div>
+            
+            {/* Description matching Hero style */}
+            <div className="max-w-[733.333px] mx-auto">
+              <p className="text-stone-200 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue text-center">
+                Cada herramienta está diseñada para acelerar tu flujo de trabajo y elevar la calidad de tus proyectos. 
+                Desde componentes listos hasta fragmentos de código, todo pensado para desarrolladores que buscan excelencia.
+              </p>
             </div>
           </div>
 
@@ -35,10 +43,10 @@ export default function Services() {
               {/* Card 1: Componentes Listos para Usar */}
               <div className="group relative rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
                 {/* Content */}
-                <h3 className="text-white text-xl lg:text-2xl font-medium mb-3 font-pp-neue">
+                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium font-pp-neue">
                   Componentes Listos para Usar
                 </h3>
-                <p className="text-gray-300 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
+                <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
                   Componentes pre-construidos y personalizables que puedes copiar a Webflow o usar el HTML/CSS. No más construir desde cero.
                 </p>
                 
@@ -61,10 +69,10 @@ export default function Services() {
               {/* Card 2: Contenido Educativo */}
               <div className="group relative rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
                 {/* Content */}
-                <h3 className="text-white text-xl lg:text-2xl font-medium mb-3 font-pp-neue">
+                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
                   Contenido Educativo
                 </h3>
-                <p className="text-gray-300 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
+                <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
                   Comprende los principios y desarrolla tus habilidades. No se trata solo de herramientas drag-and-drop.
                 </p>
                 
@@ -113,10 +121,10 @@ export default function Services() {
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-white text-xl lg:text-2xl font-medium mb-3 font-pp-neue">
+                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
                   Fundamentos Web
                 </h3>
-                <p className="text-gray-300 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
+                <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
                   Descubre funcionalidades esenciales y técnicas para construir bases sólidas de sitios web.
                 </p>
               </div>
@@ -124,10 +132,10 @@ export default function Services() {
               {/* Card 4: Fragmentos de Código - Middle (Wider) */}
               <div className="group relative lg:col-span-2 rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
                 {/* Content */}
-                <h3 className="text-white text-xl lg:text-2xl font-medium mb-3 font-pp-neue">
+                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
                   Fragmentos de Código
                 </h3>
-                <p className="text-gray-300 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
+                <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
                   Mantén un registro de fragmentos de código útiles. Cópialos y pégalos en tus proyectos.
                 </p>
                 
@@ -168,14 +176,14 @@ export default function Services() {
                 
                 {/* Content */}
                 <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-white text-xl lg:text-2xl font-medium font-pp-neue">
+                  <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium font-pp-neue">
                     Tango Icons
                   </h3>
                   <div className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
                     NUEVO
                   </div>
                 </div>
-                <p className="text-gray-300 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
+                <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
                   Iconos SVG limpios y escalables para tus proyectos. Simples y efectivos.
                 </p>
               </div>
@@ -184,8 +192,8 @@ export default function Services() {
           </div>
 
           {/* Bottom CTA Section */}
-          <div className="text-center mt-20 lg:mt-32">
-            <div className="max-w-2xl mx-auto">
+          <div className="mt-8">
+            <div className="rounded-2xl p-8 lg:p-10 text-center transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
               <p className="text-white text-lg lg:text-xl font-medium font-pp-neue">
                 Y viene mucho más...
               </p>
