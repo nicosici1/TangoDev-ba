@@ -205,17 +205,37 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom right visual element */}
- {/*      <div className="absolute bottom-8 right-8 hidden lg:block">
-        <div className="w-32 h-20 bg-gray-900 border border-gray-700 rounded-lg p-2">
-          <div className="flex space-x-1 h-full">
-            <div className="w-6 h-6 bg-gray-600 rounded"></div>
-            <div className="w-6 h-6 bg-orange-500 rounded"></div>
-            <div className="w-6 h-6 bg-gray-500 rounded"></div>
-            <div className="w-6 h-6 bg-orange-400 rounded"></div>
+      {/* Video Player - Bottom right */}
+      <div className="absolute bottom-24 right-24 hidden lg:block">
+        <div className="w-110 h-70 bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-lg overflow-hidden shadow-2xl">
+          {/* Video content */}
+          <div className="relative w-full h-full">
+            {/* Video placeholder - you can replace with actual video */}
+            <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <p className="text-white/60 text-sm font-pp-neue">Web Services</p>
+              </div>
+            </div>
+            
+            {/* Video controls */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <div className="flex items-center justify-between">
+                <span className="text-white/80 text-sm font-pp-neue">00:35</span>
+                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+                  <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }

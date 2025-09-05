@@ -2,15 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { useState } from 'react';
 
 const Pricing = () => {
-  const [isYearly, setIsYearly] = useState(false);
-
   const plans = [
     {
       name: "Plan Básico",
-      price: isYearly ? "$450.000/año" : "$500.000/mes",
+      price: "$500.000/mes",
       features: [
         "Diseño personalizado y responsive",
         "Hasta 6 páginas web",
@@ -20,13 +17,13 @@ const Pricing = () => {
         "Hosting y dominio opcional",
         "Soporte por email"
       ],
-              buttonText: "Comenzar",
-        buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
-        popular: false
-      },
-      {
-        name: "Plan E-Commerce",
-      price: isYearly ? "$830.000/año" : "$924.000/mes",
+      buttonText: "Comenzar",
+      buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
+      popular: false
+    },
+    {
+      name: "Plan E-Commerce",
+      price: "$924.000/mes",
       features: [
         "Todo lo del plan Básico",
         "Hasta 20 productos cargados",
@@ -42,7 +39,7 @@ const Pricing = () => {
     },
     {
       name: "Plan SaaS",
-      price: isYearly ? "$3.120.000/año" : "$3.465.000/mes",
+      price: "$3.465.000/mes",
       features: [
         "Desarrollo web a medida completo",
         "Backend personalizado y escalable",
@@ -52,9 +49,9 @@ const Pricing = () => {
         "Pagos recurrentes y suscripciones",
         "Mantenimiento post-lanzamiento"
       ],
-              buttonText: "Comenzar",
-        buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
-        popular: false
+      buttonText: "Comenzar",
+      buttonStyle: "bg-black text-white hover:bg-neutral-900 border border-neutral-800 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300",
+      popular: false
     }
   ];
 
@@ -137,9 +134,9 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                {/* CTA Button - Más redondo estilo iOS */}
+                {/* CTA Button - Más cuadrado estilo web */}
                 <button
-                  className={`w-full py-4 px-6 rounded-full font-semibold transition-all duration-300 ${plan.buttonStyle} ${
+                  className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 ${plan.buttonStyle} ${
                     plan.buttonStyle.includes('bg-black') 
                       ? 'shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)]' 
                       : 'shadow-lg hover:shadow-xl'
@@ -155,35 +152,6 @@ const Pricing = () => {
 
 
 
-        {/* Toggle de Facturación */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex items-center justify-center space-x-4"
-        >
-          <span className="text-slate-300">Facturación Mensual</span>
-          <button
-            onClick={() => setIsYearly(!isYearly)}
-            className={`relative w-16 h-8 rounded-full transition-colors duration-300 ${
-              isYearly ? 'bg-white' : 'bg-gray-700'
-            }`}
-          >
-            <motion.div
-              animate={{
-                x: isYearly ? 32 : 4
-              }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-1 w-6 h-6 bg-gray-800 rounded-full shadow-md"
-            />
-          </button>
-          <span className="text-white font-medium">Facturación Anual</span>
-          {isYearly && (
-            <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-medium border border-green-500/30">
-              Ahorra 10%
-            </span>
-          )}
-        </motion.div>
       </div>
     </section>
   );
