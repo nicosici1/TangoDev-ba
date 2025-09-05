@@ -172,9 +172,9 @@ const Process = () => {
                           className="overflow-hidden"
                         >
                           <div className="pt-4 pb-6 px-4 lg:px-0">
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                            <div className={`grid grid-cols-1 gap-6 lg:gap-8 ${step.id !== "06" ? "lg:grid-cols-3" : "lg:grid-cols-1"}`}>
                               {/* Description */}
-                              <div className="lg:col-span-2">
+                              <div className={step.id !== "06" ? "lg:col-span-2" : "lg:col-span-1"}>
                                 <h4 className="text-stone-200 text-lg lg:text-xl font-medium mb-3 font-pp-neue">
                                   {step.subtitle}
                                 </h4>
@@ -189,22 +189,24 @@ const Process = () => {
                                 </div>
                               </div>
                               
-                              {/* Deliverables */}
-                              <div>
-                                <h5 className="text-stone-200 text-lg lg:text-xl font-medium mb-4 font-pp-neue">
-                                  Entregables
-                                </h5>
-                                <div className="space-y-3">
-                                  {step.deliverables.map((deliverable, idx) => (
-                                    <div key={idx} className="flex items-start gap-3">
-                                      <div className="w-1.5 h-1.5 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
-                                      <span className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
-                                        {deliverable}
-                                      </span>
-                                    </div>
-                                  ))}
+                              {/* Deliverables - Hidden for Deploy step */}
+                              {step.id !== "06" && (
+                                <div>
+                                  <h5 className="text-stone-200 text-lg lg:text-xl font-medium mb-4 font-pp-neue">
+                                    Entregables
+                                  </h5>
+                                  <div className="space-y-3">
+                                    {step.deliverables.map((deliverable, idx) => (
+                                      <div key={idx} className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                                        <span className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue">
+                                          {deliverable}
+                                        </span>
+                                      </div>
+                                    ))}
+                                  </div>
                                 </div>
-                              </div>
+                              )}
                             </div>
                           </div>
                         </motion.div>
@@ -228,7 +230,7 @@ const Process = () => {
           </div>
 
           {/* Bottom Action */}
-          <motion.div 
+         {/*  <motion.div 
             className="text-center mt-20 lg:mt-32"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -242,7 +244,7 @@ const Process = () => {
             >
               Iniciar proyecto
             </motion.button>
-          </motion.div>
+          </motion.div> */}
 
         </div>
       </div>

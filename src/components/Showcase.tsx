@@ -12,7 +12,7 @@ const Showcase = () => {
       id: 1,
       title: "Subilo Dashboard",
       description: "Proyecto personal desarrollado por el equipo. Plataforma completa para músicos que permite gestionar envíos, subir tracks y compartir música profesionalmente.",
-      background: "url('/imgs/cryptohub2.png')",
+      background: "url('/imgs/pilares.jpg')",
       category: "Proyecto Personal",
       details: [
         "Dashboard completo para músicos",
@@ -25,7 +25,7 @@ const Showcase = () => {
       id: 2,
       title: "E-commerce Avanzado",
       description: "Ejemplo de nuestras capacidades en e-commerce. Plataformas completas con pasarelas de pago, gestión de inventario y analytics en tiempo real.",
-      background: "url('/imgs/dashboard.png')",
+      background: "url('/imgs/back.jpg')",
       category: "Capacidad Técnica",
       details: [
         "Plataformas completas de e-commerce",

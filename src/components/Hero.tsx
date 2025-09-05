@@ -81,7 +81,7 @@ export default function Hero() {
             <div className="flex flex-row gap-3 lg:gap-4 mb-12 lg:mb-24">
               {/* Primary button with flip effect */}
               <motion.div
-                className="bg-white text-black px-5 py-3 lg:px-8 lg:py-4 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base lg:text-lg font-pp-neue relative overflow-hidden cursor-pointer"
+                className="bg-white text-black px-6 py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-gray-100 transition-colors font-medium text-base lg:text-lg font-pp-neue relative overflow-hidden cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -110,14 +110,14 @@ export default function Hero() {
 
               {/* Secondary button with glass effect and flip */}
               <motion.button 
-                className="px-5 py-3 lg:px-8 lg:py-4 rounded-lg font-medium flex items-center gap-2 lg:gap-3 text-base lg:text-lg font-pp-neue text-white border border-white/20 backdrop-blur-sm hover:border-white/20 transition-all duration-300 relative overflow-hidden" 
+                className="px-6 py-4 lg:px-10 lg:py-5 rounded-lg font-medium flex items-center gap-2 lg:gap-3 text-base lg:text-lg font-pp-neue text-white backdrop-blur-sm transition-all duration-300 relative overflow-hidden" 
                 style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.1)'
                 }}
                 whileHover={{ 
                   scale: 1.02,
-                  backgroundColor: 'rgba(255, 255, 255, 0.15)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)'
                 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -131,7 +131,6 @@ export default function Hero() {
                 >
                   <div className="w-5 h-5 lg:w-6 lg:h-6 bg-slate-600 rounded-full border-2 border-gray-800"></div>
                   <div className="w-5 h-5 lg:w-6 lg:h-6 bg-blue-800 rounded-full border-2 border-gray-800"></div>
-                  <div className="w-5 h-5 lg:w-6 lg:h-6 bg-blue-600 rounded-full border-2 border-gray-800"></div>
                 </motion.div>
                 
                 <motion.div

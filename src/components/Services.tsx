@@ -1,6 +1,25 @@
 'use client';
 
+import { useRef } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
+
 export default function Services() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 0.8", "end 0.2"]
+  });
+
+  // Transformaciones para efectos parallax solo en las imágenes - valores más notorios
+  const imageParallax1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const imageParallax2 = useTransform(scrollYProgress, [0, 1], [0, 40]);
+  const imageParallax3 = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const imageParallax4 = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const imageParallax5 = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  
+  // Efecto de escala para hacer el parallax más visible
+  const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1]);
   return (
     <section className="relative min-h-screen bg-black overflow-hidden mt-32">
       {/* Grain texture overlay - matching Hero */}
@@ -11,25 +30,25 @@ export default function Services() {
       </div> */}
 
       {/* Content Container */}
-      <div className="relative z-10 w-full pt-32 lg:pt-40 pb-24 lg:pb-32">
+      <div ref={containerRef} className="relative z-10 w-full pt-32 lg:pt-40 pb-24 lg:pb-32">
         <div className="w-full px-4 lg:px-8 xl:px-12 2xl:px-16">
           
-          {/* Section Header - estilo español */}
+          {/* Section Header */}
           <div className="text-center mb-20 lg:mb-32">
             <div className="w-full mb-8">
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[1.1] tracking-[-1.2px] font-pp-neue text-center">
-                Las herramientas que impulsan
+                Servicios de desarrollo web
               </div>
               <div className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium text-stone-200 leading-[1.1] tracking-[-1.2px] font-pp-neue text-center">
-                sitios web extraordinarios
+                que transforman ideas en realidad
               </div>
             </div>
             
-            {/* Description matching Hero style */}
+            {/* Description */}
             <div className="max-w-[733.333px] mx-auto">
               <p className="text-stone-200 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue text-center">
-                Cada herramienta está diseñada para acelerar tu flujo de trabajo y elevar la calidad de tus proyectos. 
-                Desde componentes listos hasta fragmentos de código, todo pensado para desarrolladores que buscan excelencia.
+                Desde sitios web corporativos hasta aplicaciones web complejas, 
+                creamos soluciones digitales que impulsan el crecimiento de tu negocio.
               </p>
             </div>
           </div>
@@ -40,151 +59,171 @@ export default function Services() {
             {/* Top Row: 2 Services */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               
-              {/* Card 1: Componentes Listos para Usar */}
+              {/* Card 1: Desarrollo de Sitios Web */}
               <div className="group relative rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
-                {/* Content */}
-                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium font-pp-neue">
-                  Componentes Listos para Usar
+                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium font-pp-neue mb-4">
+                  Desarrollo de Sitios Web
                 </h3>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
-                  Componentes pre-construidos y personalizables que puedes copiar a Webflow o usar el HTML/CSS. No más construir desde cero.
+                  Creamos sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta sitios corporativos completos.
                 </p>
                 
-                {/* Visual: UI Components Collage */}
-                <div className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden">
+                {/* Visual: Website Mockup con parallax */}
+                <motion.div 
+                  style={{ y: imageParallax1, scale: imageScale }}
+                  className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-500/20"
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="grid grid-cols-3 gap-2 p-4 w-full">
-                      {/* UI Component previews */}
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">Volver Arriba</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">Slider</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">Formulario</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">Botón</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">Card</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">Nav</div>
+                    <div className="bg-white rounded-lg p-3 w-4/5 h-4/5 relative shadow-lg">
+                      {/* Browser mockup */}
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                        <div className="flex-1 bg-gray-200 rounded px-2 py-1 text-xs text-gray-600">tu-sitio.com</div>
+                      </div>
+                      <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-8 rounded flex items-center justify-center text-white text-sm font-medium">
+                        Tu Marca
+                      </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
-              {/* Card 2: Contenido Educativo */}
+              {/* Card 2: Aplicaciones Web */}
               <div className="group relative rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
-                {/* Content */}
                 <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
-                  Contenido Educativo
+                  Aplicaciones Web
                 </h3>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
-                  Comprende los principios y desarrolla tus habilidades. No se trata solo de herramientas drag-and-drop.
+                  Desarrollamos aplicaciones web personalizadas con React, Next.js y tecnologías modernas para tu negocio.
                 </p>
                 
-                {/* Visual: Video Player with Update Notification */}
-                <div className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden">
+                {/* Visual: App Interface con parallax */}
+                <motion.div 
+                  style={{ y: imageParallax2, scale: imageScale }}
+                  className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden bg-gradient-to-br from-green-500/20 to-blue-500/20"
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white rounded-lg p-3 w-4/5 h-4/5 relative">
-                      {/* Video Player */}
-                      <div className="w-full h-full bg-gray-200 rounded flex items-center justify-center">
-                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                          <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+                    <div className="bg-white rounded-lg p-3 w-4/5 h-4/5 relative shadow-lg">
+                      {/* App interface mockup */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-sm font-medium text-gray-800">Dashboard</div>
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
                       </div>
-                      
-                      {/* Update Notification */}
-                      <div className="absolute -right-2 -top-2 bg-blue-500 text-white text-xs px-2 py-1 rounded border border-blue-400">
-                        Actualizaciones Frecuentes
+                      <div className="space-y-1">
+                        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+                        <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                        <div className="h-2 bg-green-400 rounded w-2/3"></div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Bottom Row: 3 Services */}
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
               
-              {/* Card 3: Fundamentos Web */}
+              {/* Card 3: E-commerce */}
               <div className="group relative lg:col-span-1 rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
-                {/* Visual: Basic UI Elements */}
-                <div className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden">
+                {/* Visual: E-commerce Interface con parallax */}
+                <motion.div 
+                  style={{ y: imageParallax3, scale: imageScale }}
+                  className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden bg-gradient-to-br from-orange-500/20 to-red-500/20"
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="grid grid-cols-1 gap-3 p-4 w-full">
-                      {/* Display Count Element */}
-                      <div className="bg-white rounded-lg p-3 flex items-center justify-between">
-                        <span className="text-gray-800 text-sm font-medium">Contador: 0</span>
-                        <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                    <div className="bg-white rounded-lg p-3 w-4/5 h-4/5 relative shadow-lg">
+                      {/* Shopping interface */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-sm font-medium text-gray-800">🛒 Tienda</div>
+                        <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                          <span className="text-white text-xs">3</span>
+                        </div>
                       </div>
-                      {/* Abstract Shapes */}
-                      <div className="flex gap-2 justify-center">
-                        <div className="w-8 h-8 bg-gray-300 rounded"></div>
-                        <div className="w-8 h-8 bg-gray-400 rounded-full"></div>
+                      <div className="space-y-1">
+                        <div className="h-3 bg-gray-200 rounded"></div>
+                        <div className="h-2 bg-orange-400 rounded w-2/3"></div>
+                        <div className="h-2 bg-gray-200 rounded w-1/2"></div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
                 
-                {/* Content */}
                 <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
-                  Fundamentos Web
+                  E-commerce
                 </h3>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
-                  Descubre funcionalidades esenciales y técnicas para construir bases sólidas de sitios web.
+                  Tiendas online completas con carrito de compras, pagos seguros y gestión de inventario.
                 </p>
               </div>
 
-              {/* Card 4: Fragmentos de Código - Middle (Wider) */}
+              {/* Card 4: Consultoría Técnica - Middle (Wider) */}
               <div className="group relative lg:col-span-2 rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
-                {/* Content */}
                 <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
-                  Fragmentos de Código
+                  Consultoría Técnica
                 </h3>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
-                  Mantén un registro de fragmentos de código útiles. Cópialos y pégalos en tus proyectos.
+                  Te ayudamos a elegir las mejores tecnologías, optimizar tu sitio web existente y planificar el crecimiento digital de tu empresa.
                 </p>
                 
-                {/* Visual: Code Editor */}
-                <div className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden">
+                {/* Visual: Analytics Dashboard con parallax */}
+                <motion.div 
+                  style={{ y: imageParallax4, scale: imageScale }}
+                  className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden bg-gradient-to-br from-purple-500/20 to-pink-500/20"
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-gray-900 rounded-lg p-3 w-4/5 h-4/5 relative">
-                      {/* Copy Button */}
-                      <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
-                        Copiar
+                    <div className="bg-white rounded-lg p-3 w-4/5 h-4/5 relative shadow-lg">
+                      {/* Analytics mockup */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-sm font-medium text-gray-800">📊 Analytics</div>
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
                       </div>
-                      {/* Code Content */}
-                      <div className="text-xs text-white font-mono mt-4">
-                        <div className="text-gray-400">{/* Obtener año actual */}</div>
-                        <div className="text-blue-400">const</div> <div className="text-white">añoActual =</div> <div className="text-green-400">new Date</div><div className="text-white">().</div><div className="text-blue-400">getFullYear</div><div className="text-white">();</div>
+                      <div className="grid grid-cols-2 gap-1">
+                        <div className="h-4 bg-purple-400 rounded"></div>
+                        <div className="h-3 bg-pink-400 rounded"></div>
+                        <div className="h-2 bg-gray-200 rounded"></div>
+                        <div className="h-3 bg-purple-300 rounded"></div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
-              {/* Card 5: Tango Icons */}
+              {/* Card 5: Mantenimiento */}
               <div className="group relative lg:col-span-1 rounded-2xl p-8 lg:p-10 transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
-                {/* Visual: Icons Grid */}
-                <div className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden">
+                {/* Visual: Maintenance Tools con parallax */}
+                <motion.div 
+                  style={{ y: imageParallax5, scale: imageScale }}
+                  className="w-full h-32 lg:h-40 rounded-xl mb-6 relative overflow-hidden bg-gradient-to-br from-cyan-500/20 to-blue-500/20"
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="grid grid-cols-3 gap-2 p-4 w-full">
-                      {/* Icon previews */}
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">📁</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">⚡</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">T</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">🛒</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">V2</div>
-                      <div className="bg-white rounded-lg p-2 text-xs text-gray-800 font-medium text-center">★</div>
+                    <div className="bg-white rounded-lg p-3 w-4/5 h-4/5 relative shadow-lg">
+                      {/* Tools interface */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-sm font-medium text-gray-800">🔧 Mantenimiento</div>
+                        <div className="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="h-2 bg-cyan-400 rounded w-full"></div>
+                        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+                        <div className="h-2 bg-cyan-300 rounded w-1/2"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
                 
-                {/* Content */}
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium font-pp-neue">
-                    Tango Icons
-                  </h3>
-                  <div className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-                    NUEVO
-                  </div>
-                </div>
+                <h3 className="text-stone-200 text-2xl lg:text-3xl font-medium mb-3 font-pp-neue">
+                  Mantenimiento
+                </h3>
                 <p className="text-stone-400 text-base lg:text-[21.3333px] leading-relaxed font-medium font-pp-neue mb-6">
-                  Iconos SVG limpios y escalables para tus proyectos. Simples y efectivos.
+                  Mantenemos tu sitio web actualizado, seguro y funcionando perfectamente las 24/7.
                 </p>
               </div>
             </div>
@@ -194,9 +233,20 @@ export default function Services() {
           {/* Bottom CTA Section */}
           <div className="mt-8">
             <div className="rounded-2xl p-8 lg:p-10 text-center transition-all duration-500" style={{backgroundColor: 'rgba(239, 238, 236, 0.06)', border: '1px solid rgba(239, 238, 236, 0.03)'}}>
-              <p className="text-white text-lg lg:text-xl font-medium font-pp-neue">
-                Y viene mucho más...
+              <h3 className="text-white text-2xl lg:text-3xl font-medium font-pp-neue mb-4">
+                ¿Listo para comenzar tu proyecto?
+              </h3>
+              <p className="text-stone-300 text-lg lg:text-xl font-medium font-pp-neue mb-6">
+                Trabajemos juntos para crear algo extraordinario
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="px-8 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                  Iniciar Proyecto
+                </button>
+                <button className="px-8 py-3 border border-white/20 text-white rounded-lg font-medium hover:border-white/40 transition-colors">
+                  Ver Portfolio
+                </button>
+              </div>
             </div>
           </div>
 
@@ -205,3 +255,4 @@ export default function Services() {
     </section>
   );
 }
+
